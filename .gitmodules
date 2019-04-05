@@ -1,0 +1,6 @@
+[submodule "back"]
+	path = back
+	url = https://github.com/hbaltz/technical-test-kpi-intelligence-back.git
+[submodule "front"]
+	path = front
+	url = https://github.com/hbaltz/technical-test-kpi-intelligence-front.git
