@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api-inv:
+    restart: always
+    build: ./back
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+  db:
+    restart: always
+    build: ./db
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:
