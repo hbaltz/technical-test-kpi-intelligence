@@ -18,6 +18,13 @@ services:
       - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  front:
+    restart: always
+    build: ./front
+    ports:
+      - "4200:4200"
+    links:
+      - api-inv
 
 volumes:
   db-data:
